@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fideli Estudio — diseño gráfico, branding y stickers.">
+  <title>Fideli Estudio | Diseño gráfico</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="brand-mark" href="#inicio" aria-label="Fideli Estudio, inicio">
+      <img src="img/logo-blanco.png" alt="Logo de Fideli Estudio">
+    </a>
+    <nav class="navigation" id="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#acerca">Acerca de</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-label="Presentación de Fideli Estudio">
+      <div class="hero-pattern" aria-hidden="true">
+        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="#501817" stroke-width="42" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M-80 110 C100 280 110 20 300 100 S480 320 610 115 820 40 900 160 1050 330 1190 170 1350 90 1510 190"/>
+            <path d="M-90 420 C90 260 160 550 300 410 S390 240 520 380 650 600 790 430 950 260 1080 420 1290 580 1510 380"/>
+            <path d="M-80 760 C80 570 220 900 360 720 S500 550 650 720 850 900 980 710 1190 550 1320 720 1450 820 1530 700"/>
+            <path d="M210 -60 C370 120 180 260 300 360 S520 470 420 650 300 820 390 980"/>
+            <path d="M760 -80 C620 100 850 210 740 350 S600 510 760 620 950 780 850 980"/>
+            <path d="M1250 -60 C1100 120 1320 220 1200 360 S1050 520 1190 640 1370 800 1290 980"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">FIDELI ESTUDIO CREATIVO</p>
+        <h1>Ideas que<br><span>se hacen visibles.</span></h1>
+        <a class="text-link" href="#servicios">Explorá lo que hacemos <span>↗</span></a>
+      </div>
+      <div class="hero-index">01 / 03</div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services section-wrap" id="servicios">
+      <div class="section-heading">
+        <p class="eyebrow">LO QUE HACEMOS</p>
+        <h2>Diseño con identidad.</h2>
+      </div>
+      <div class="service-grid">
+        <!-- Tarjeta Branding -->
+        <a class="service-card branding" href="#contacto">
+          <!-- ¡Eliminamos la pestañita para que no se repita la imagen! -->
+          <span class="card-arrow">↗</span>
+        </a>
+        <!-- Tarjeta Stickers -->
+        <a class="service-card stickers" href="#contacto">
+          <span class="card-tab"></span>
+          <span class="card-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ACERCA DE -->
+    <section class="about section-wrap" id="acerca">
+      <div class="about-art"></div>
+      <div class="about-copy">
+        <p class="eyebrow">UN POCO SOBRE NOSOTROS</p>
+        <h2>Diseñamos para<br>que las ideas<br><em>tengan identidad.</em></h2>
+        <p>En Fideli Estudio transformamos ideas en experiencias visuales. Creamos piezas gráficas con personalidad, cuidando cada detalle para comunicar de una manera auténtica.</p>
+        <a class="text-link dark-link" href="#contacto">Conocé más <span>↗</span></a>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <p>LIVE TO CREATE</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contacto">
+    <div>
+      <p class="eyebrow">¿TENÉS UN PROYECTO EN MENTE?</p>
+      <h2>Hagámoslo realidad.</h2>
+    </div>
+    <a class="contact-link" href="mailto:hola@fidelestudio.com">Hablemos <span>↗</span></a>
+    <p class="copyright">© 2026 Fideli Estudio Creativo</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.navigation');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('is-open', !open);
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>
